@@ -1,17 +1,17 @@
 // Styling
-import { Logo, ThemeButton } from "../styles";
-import {Link,NavLink} from "react-router-dom"
-import {lightlogo} from "../ligtlogo"
+import { Logo, ThemeButton,NavProduct } from "../styles";
+
+
 const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand">
-      <Link to="/">
-       <img src={lightlogo} alt="Girl in a jacket" width="20" height="20"className="navbar-brand"/>
-       </Link>
+      <Logo to="/">
+       <img src="https://cdn.discordapp.com/attachments/797449550616068106/804257171373162526/dark-logo.png" width="300" height="300"alt="Girl in a jacket" className="navbar-brand"/>
+       </Logo>
       <div className="navbar-nav ml-auto">
-        <NavLink to= "/products." className="nav-item" style={{ padding: "0.25em 1em" }}>
+        <NavProduct to= "/products." className="nav-item" style={{ padding: "0.25em 1em" }}>
           Products
-        </NavLink>
+        </NavProduct>
         <ThemeButton className="nav-item" onClick={props.toggleTheme}>
           {props.currentTheme === "light" ? "Dark" : "Light"} Mode
         </ThemeButton>

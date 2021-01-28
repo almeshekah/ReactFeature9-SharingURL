@@ -79,14 +79,18 @@ export const ThemeButton = styled.button`
 export const Title = styled.h1`
   text-align: center;
 `;
-export const NavProduct = NavLink`
+export const NavProduct = styled(NavLink)`
 
-color:red;
+color:${(props)=>props.theme.mainColor};
+
+&.active {
+  color:${(props)=>props.theme.red}; !important
+}
   
 `;
 
 
-export const Logo = Link`
+export const Logo = styled(Link)`
 
   
 `;

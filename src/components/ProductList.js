@@ -4,6 +4,7 @@ import { ListWrapper } from "../styles";
 import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import{Route } from "react-router";
 
 const ProductList = (props) => {
   const [query, setQuery] = useState("");
@@ -22,10 +23,14 @@ const ProductList = (props) => {
     ));
 
   return (
+    
     <div>
-      <SearchBar setQuery={setQuery} />
-      <ListWrapper>{productList}</ListWrapper>
+      
+       <SearchBar setQuery={setQuery} />
+       <ListWrapper>{productList}</ListWrapper>
+      
     </div>
+    
   );
 };
 

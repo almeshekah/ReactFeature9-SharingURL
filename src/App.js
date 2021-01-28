@@ -7,6 +7,7 @@ import {
   Title,
 } from "./styles";
 import React, { useState } from "react";
+import{Route , Switch} from "react-router";
 
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
@@ -71,11 +72,22 @@ function App() {
     );
 
   return (
+
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
       <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme} />
-      <Home />
-      {setView()}
+      <Switch>
+         <Route exact path="/">
+         <Home />
+         </Route>
+         <Route exact path="/products.">
+         <ProductList
+         products={_products}
+         deleteProduct={deleteProduct}
+         selectProduct={selectProduct}/>
+         </Route>
+      </Switch>
+      
     </ThemeProvider>
   );
 }
